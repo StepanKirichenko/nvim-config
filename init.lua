@@ -78,10 +78,27 @@ require("lazy").setup({
         },
       },
     },
-  }
+  },
+  "Mofiqul/dracula.nvim",
 })
 
 
+-- *************************************************************************
+-- colorscheme configuration
+-- *************************************************************************
+
+-- docs: https://github.com/Mofiqul/dracula.nvim
+local dracula = require("dracula")
+dracula.setup({
+  -- use transparent background
+  transparent_bg = true,        -- default false
+  -- set custom lualine background color
+  lualine_bg_color = "#44475a", -- default nil
+  -- set italic comment
+  italic_comment = true,        -- default false
+})
+
+vim.cmd [[colorscheme dracula]]
 
 -- *************************************************************************
 -- LSP configuration
@@ -93,9 +110,19 @@ require("mason-lspconfig").setup {
 }
 
 require("mason-lspconfig").setup_handlers {
-  function(server_name)  -- default handler (optional)
+  function(server_name) -- default handler (optional)
     require("lspconfig")[server_name].setup {}
   end,
+}
+
+require("lspconfig").lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' },
+      }
+    }
+  }
 }
 
 -- Global mappings.
