@@ -42,6 +42,7 @@ require("lazy").setup({
     opts = {} -- this is equalent to setup({}) function
   },
   'windwp/nvim-ts-autotag',
+  'ThePrimeagen/harpoon',
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -205,3 +206,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+-- harpoon
+
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+vim.keymap.set("n", "<leader>a", mark.add_file)
+vim.keymap.set("n", "<A-e>", ui.toggle_quick_menu)
+
+vim.keymap.set("n", "<A-j>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<A-k>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<A-l>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<A-;>", function() ui.nav_file(4) end)
