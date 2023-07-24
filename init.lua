@@ -41,6 +41,7 @@ require("lazy").setup({
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
+  'windwp/nvim-ts-autotag',
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -96,6 +97,7 @@ require("lazy").setup({
   "Mofiqul/dracula.nvim",
 })
 
+require('nvim-ts-autotag').setup()
 
 -- *************************************************************************
 -- colorscheme configuration
