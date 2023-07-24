@@ -27,6 +27,10 @@ vim.g.mapleader = " "
 
 -- "folke/which-key.nvim",
 require("lazy").setup({
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  },
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -97,6 +101,13 @@ dracula.setup({
   -- set italic comment
   italic_comment = true,        -- default false
 })
+
+
+-- *************************************************************************
+-- lualine configuration
+-- *************************************************************************
+
+require('lualine').setup()
 
 vim.cmd [[colorscheme dracula]]
 
