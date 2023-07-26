@@ -219,3 +219,18 @@ vim.keymap.set("n", "<A-j>", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<A-k>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<A-l>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<A-;>", function() ui.nav_file(4) end)
+
+
+-- *************************************************************************
+-- misc
+-- *************************************************************************
+
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "yes:1"
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
+vim.o.scrolloff = 8
