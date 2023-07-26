@@ -1,37 +1,19 @@
--- *************************************************************************
--- set leader key
--- *************************************************************************
-
 vim.g.mapleader = " "
 
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "yes:2"
+
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+
+vim.o.scrolloff = 8
+
+
 require('plugins')
-
 require('colorscheme')
-
--- *************************************************************************
--- LSP configuration
--- *************************************************************************
-
-require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = { "lua_ls", "rust_analyzer", "tsserver", "html", "cssls", "cssmodules_ls", "gopls" },
-}
-
-require("mason-lspconfig").setup_handlers {
-  function(server_name) -- default handler (optional)
-    require("lspconfig")[server_name].setup {}
-  end,
-}
-
-require("lspconfig").lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' },
-      }
-    }
-  }
-}
+require('lsp')
 
 -- *************************************************************************
 -- keymaps
@@ -85,17 +67,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-
--- *************************************************************************
--- misc
--- *************************************************************************
-
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.signcolumn = "yes:1"
-
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.expandtab = true
-
-vim.o.scrolloff = 8
