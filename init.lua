@@ -115,20 +115,6 @@ dracula.setup({
   italic_comment = true,        -- default false
 })
 
-
--- *************************************************************************
--- lualine configuration
--- *************************************************************************
-
--- docs: https://github.com/nvim-lualine/lualine.nvim
-require('lualine').setup {
-  options = {
-    theme = 'dracula-nvim'
-  }
-}
-
-vim.cmd [[colorscheme dracula]]
-
 -- *************************************************************************
 -- LSP configuration
 -- *************************************************************************
