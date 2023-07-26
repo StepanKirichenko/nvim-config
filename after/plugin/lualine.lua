@@ -4,5 +4,3 @@ require('lualine').setup {
     theme = 'dracula-nvim'
   }
 }
-
-vim.cmd [[colorscheme dracula]]
