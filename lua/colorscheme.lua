@@ -1,3 +1,4 @@
+-- *** Dracula ***
 -- docs: https://github.com/Mofiqul/dracula.nvim
 local dracula = require("dracula")
 dracula.setup({
@@ -10,3 +11,9 @@ dracula.setup({
 })
 
 vim.cmd [[colorscheme dracula]]
+
+-- *** onedark.nvim ***
+-- require('onedark').setup {
+--     style = 'dark'
+-- }
+-- require('onedark').load()

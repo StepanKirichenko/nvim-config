@@ -100,6 +100,7 @@ require("lazy").setup({
     },
     'jose-elias-alvarez/null-ls.nvim',
     "Mofiqul/dracula.nvim",
+    'navarasu/onedark.nvim',
     {
         'numToStr/Comment.nvim',
         config = function()
