@@ -31,25 +31,6 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        opts = {} -- this is equalent to setup({}) function
-    },
-    'windwp/nvim-ts-autotag',
-    'ThePrimeagen/harpoon',
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-    {
-        "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        version = "1.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!).
-        build = "make install_jsregexp"
-    },
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    {
         "nvim-treesitter/nvim-treesitter",
         version = false, -- last release is way too old and doesn't work on Windows
         build = ":TSUpdate",
@@ -71,6 +52,7 @@ require("lazy").setup({
                 "bash",
                 "c",
                 "html",
+                "go",
                 "javascript",
                 "json",
                 "lua",
@@ -98,6 +80,25 @@ require("lazy").setup({
             },
         },
     },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
+    'windwp/nvim-ts-autotag',
+    'ThePrimeagen/harpoon',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "1.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
     'jose-elias-alvarez/null-ls.nvim',
     "Mofiqul/dracula.nvim",
     'navarasu/onedark.nvim',
